@@ -52,33 +52,44 @@ A **full-stack MERN (MongoDB, Express, React, Node.js)** chat application with r
 ## ⚙️ Installation & Setup
 
 ### 1️⃣ Clone the repository
+
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+```
 
-2️⃣ Backend Setup
-Navigate to the backend folder and install dependencies:
+### 2️⃣ Backend Setup
 
+- 1 Navigate to the backend folder and install dependencies:
+``` bash
 cd backend
 npm install
-Create .env in backend/:
+```
+- 2 Create .env in backend/:
 
-Create a .env file in the backend/ folder with the following content:
+```bash Create a .env file in the backend/ folder with the following content:
 PORT=8000
 MONGO_URI=your_mongo_connection_string
 JWT_SECRET=your_secret_key
 CLOUDINARY_URL=your_cloudinary_url   # if using Cloudinary
+```
 
-Run the backend server:
+- 3 Run the backend server:
+```bash
 npm run dev
+```
 
+### 3️⃣ Frontend Setup
 
-3️⃣ Frontend Setup
-
-Navigate to the frontend folder and install dependencies:
+- 1 Navigate to the frontend folder and install dependencies:
+```bash
 cd frontend
 npm install
-Create a .env file in the frontend/ folder with the following content:
+```
+
+- 2 Create a .env file in the frontend/ folder with the following content:
+```bash
 VITE_BACKEND_URL=http://localhost:8000
 Run the frontend server:
 npm run dev
+```
