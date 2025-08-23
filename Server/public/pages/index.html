@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h2>Welcome</h2>
+    <button id="btn">Disconnect Me</button>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      btn = document.getElementById('btn');
+
+      // var socket = io();
+      let Dat = new Date().toLocaleTimeString("en-IN", {
+        timeZone : "Asia/kolkata"
+      })
+      const socket = io("http://localhost:8000", { query: { userId: Dat } });
+
+      socket.on('getOnlineUsers', users => {
+        console.log(users);
+      })
+
+      btn.addEventListener("click", (e) => {
+        socket.disconnect();
+      })
+
+
+
+    </script>
+</body>
+</html>
