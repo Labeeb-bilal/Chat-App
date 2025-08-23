@@ -44,7 +44,7 @@ A **full-stack MERN (MongoDB, Express, React, Node.js)** chat application with r
 ## 🛠️ Tech Stack
 
 **Frontend:** React, Vite, TailwindCSS/Bootstrap, Axios  
-**Backend:** Node.js, Express.js, MongoDB (Mongoose), JWT, Bcrypt, Cloudinary (optional)  
+**Backend:** Node.js, Express.js, MongoDB (Mongoose), JWT, Bcrypt, Cloudinary 
 **Real-time Communication:** Socket.io / WebSockets
 
 ---
@@ -54,7 +54,7 @@ A **full-stack MERN (MongoDB, Express, React, Node.js)** chat application with r
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Labeeb-bilal/Chat-App.git
 cd your-repo-name
 ```
 
@@ -93,3 +93,4 @@ VITE_BACKEND_URL=http://localhost:8000
 Run the frontend server:
 npm run dev
 ```
+- Create a .env file in the frontend/ folder with the following content:
