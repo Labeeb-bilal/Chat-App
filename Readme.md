@@ -60,12 +60,12 @@ cd your-repo-name
 
 ### 2️⃣ Backend Setup
 
-- 1 Navigate to the backend folder and install dependencies:
+- Navigate to the backend folder and install dependencies:
 ``` bash
 cd backend
 npm install
 ```
-- 2 Create .env in backend/:
+- Create .env in backend/:
 
 ```bash Create a .env file in the backend/ folder with the following content:
 PORT=8000
@@ -74,20 +74,20 @@ JWT_SECRET=your_secret_key
 CLOUDINARY_URL=your_cloudinary_url   # if using Cloudinary
 ```
 
-- 3 Run the backend server:
+- Run the backend server:
 ```bash
 npm run dev
 ```
 
 ### 3️⃣ Frontend Setup
 
-- 1 Navigate to the frontend folder and install dependencies:
+- Navigate to the frontend folder and install dependencies:
 ```bash
 cd frontend
 npm install
 ```
 
-- 2 Create a .env file in the frontend/ folder with the following content:
+- Create a .env file in the frontend/ folder with the following content:
 ```bash
 VITE_BACKEND_URL=http://localhost:8000
 Run the frontend server:
