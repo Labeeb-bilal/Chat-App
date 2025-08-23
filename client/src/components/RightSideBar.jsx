@@ -8,19 +8,26 @@ export default function RightSideBar() {
 const {handleLogout,onlineUsers} = useContext(AuthContext);
 const {selectedUser,messages} = useContext(ChatContext);
 const [msgImages, setmsgImages] = useState([]);
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
   // console.log(selectedUser)
 
-  useEffect(()=> {
-    const ImagesData = messages.filter(msg => msg.image).map(msg => msg.image); //filter gives only images with all data, map gives msgs only  
-    setmsgImages(ImagesData);  
-    console.log(ImagesData);
-    console.log(selectedUser);
-  },[messages])
+    useEffect(()=> {
+      const ImagesData = messages.filter(msg => msg.image).map(msg => msg.image); //filter gives only images with all data, map gives msgs only  
+      setmsgImages(ImagesData);  
+    },[messages])
+
+      const profilePic = selectedUser?.profilePic
+      ? selectedUser.profilePic.includes('/user.png')
+        ? `${backendURL}${selectedUser.profilePic}`
+        : selectedUser.profilePic
+      : `${backendURL}/user.png`; 
+
+
   return selectedUser && (
     <div className={`bg-[#8185B2]/10 text-white w-full relative overflow-y-scroll hidden lg:block  ${selectedUser? 'max-md:hidden ' : ''}`}>
       <div className='pt-16 flex flex-col items-center justify-center gap-2 text-xs font-line mx-auto'>
-          <img src={`http://localhost:8000/${selectedUser?.profilePic}`} className='w-20 aspect-[1/1] rounded-full'/>
+          <img src={profilePic} className='w-20 aspect-[1/1] rounded-full'/>
           <h2 className='px-10 text-xl font-medium mx-auto flex gap-2 items-center'>
             {onlineUsers.includes(selectedUser._id) && (<span className=' w-2 h-2 rounded-full bg-green-500'></span>)}
             {selectedUser.fullName}
