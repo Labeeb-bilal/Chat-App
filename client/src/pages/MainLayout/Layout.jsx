@@ -13,9 +13,9 @@ export default function Layout() {
   //     if (protectedPaths.includes(location.pathname) && AuthUser === undefined) {
   //       return window.location.href = '/login'
   //     }
-
+  // bg-[url('./src/chat-app-assets/bgImage.svg')]
   return (
-    <div className="bg-[url('./src/chat-app-assets/bgImage.svg')] bg-cover bg-center h-screen w-full bg-white">
+    <div className=" bg-black bg-cover bg-center h-screen w-full">
       <AuthProvider>
        <ChatProvider>
         <Outlet />
