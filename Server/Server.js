@@ -29,9 +29,10 @@ app.use(express.static(path.resolve('./public/images')));
 app.use('/user',UserRoute);
 app.use('/messages',MessRoute);
 
-// app.get('/', (req,res) => {
+app.get('/', (req,res) => {
 //  res.sendFile('/public/index.html')
-// })
+res.send("Server Started")
+})
 
 ConnectDb(process.env.MONGO_URI);
 
