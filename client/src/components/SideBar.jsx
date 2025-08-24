@@ -13,14 +13,14 @@ export default function SideBar() {
   const navigate = useNavigate();
   const backendURL = import.meta.env.VITE_BACKEND_URL
 
-console.log(backendURL); // should print https://your-backend.com
 
 
   useEffect(() => {
-    console.log('getOnlineUsers',onlineUsers);
+    if (AuthUser) { //just for token
       handleGetAllUsersForSidebar();
+    }
   }, []);
-
+  
 let filteredUser;
 if (AllUsers) {
   
