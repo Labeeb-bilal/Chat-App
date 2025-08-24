@@ -24,6 +24,7 @@ export const ChatProvider = ({children}) => {
       if (axios.defaults.headers.common['token']) {
         //
       }
+
         const res = await axios.get('/messages/users');
         if (res.data.success) {
             setAllUsers(res.data.AllUsers);

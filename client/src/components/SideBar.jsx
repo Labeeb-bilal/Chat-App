@@ -15,8 +15,10 @@ export default function SideBar() {
 
   useEffect(() => {
     console.log('getOnlineUsers',onlineUsers);
+    if (AuthUser) { //just for token
       handleGetAllUsersForSidebar();
-  }, []);
+    }
+  }, [AuthUser]);
 
 let filteredUser;
 if (AllUsers) {

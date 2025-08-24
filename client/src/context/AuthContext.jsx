@@ -95,7 +95,6 @@ export const AuthProvider = ({children}) => {
 
     const handleUpdateUserProfile = async (id,data) => {
        try {
-        debugger
          const res = await axios.put(`/user/update/${id}`,data)
          if (res.data.success) {
              toast.success('Profile Updated Successfully');

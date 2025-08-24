@@ -6,7 +6,7 @@ import { ChatContext } from '../context/ChatContext';
 export default function RightSideBar() {
 
 const {handleLogout,onlineUsers} = useContext(AuthContext);
-const {selectedUser,messages} = useContext(ChatContext);
+const {selectedUser,messages,setselectedUser} = useContext(ChatContext);
 const [msgImages, setmsgImages] = useState([]);
 const backendURL = import.meta.env.VITE_BACKEND_URL;
 
@@ -49,7 +49,10 @@ const backendURL = import.meta.env.VITE_BACKEND_URL;
       </div>
 
       <button className='absolute bottom-5 left-1/2 transform -translate-x-1/2
-       bg-gradient-to-r from-purple-400 to-violet-600 text-white border-none text-sm font-light py-2 px-12 rounded-full cursor-pointer lg:px-20' onClick={() => handleLogout()}>Logout</button>
+       bg-gradient-to-r from-purple-400 to-violet-600 text-white border-none text-sm font-light py-2 px-12 rounded-full cursor-pointer lg:px-20' onClick={() => {
+        handleLogout();
+        setselectedUser(null);
+       }}>Logout</button>
 
     </div>
   )
