@@ -26,8 +26,8 @@ initSocket(server);
 app.use(express.static(path.resolve('./public/images')));
 
 
-app.use('/user',UserRoute);
-app.use('/messages',MessRoute);
+app.use('/api/user',UserRoute);
+app.use('/api/messages',MessRoute);
 
 // app.get('/', (req,res) => {
 //  res.sendFile('/public/index.html')
