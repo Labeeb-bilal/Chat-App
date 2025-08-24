@@ -15,6 +15,7 @@ export default function ChatComponent() {
     messages,
     loading,
   } = useContext(ChatContext);
+  const backendURL = import.meta.env.VITE_BACKEND_URL
   const { onlineUsers, AuthUser } = useContext(AuthContext);
   console.log('AuthUser',AuthUser)
   const [input, setinput] = useState('');
@@ -57,7 +58,7 @@ export default function ChatComponent() {
       {/* Header */}
       <div className="flex items-center gap-3 py-3 mx-4 border-b border-stone-500">
         <img
-          src={`${selectedUser.profilePic.includes('/user.png')? `http://localhost:8000/${selectedUser.profilePic}` : `${selectedUser.profilePic}`}`}
+          src={`${selectedUser.profilePic.includes('/user.png')? `${backendURL}/${selectedUser.profilePic}` : `${selectedUser.profilePic}`}`}
           alt={selectedUser.profilePic}
           className="w-8 rounded-full"
         />
@@ -118,10 +119,10 @@ export default function ChatComponent() {
                 src={
                   msg.senderId === AuthUser._id
                     ? AuthUser.profilePic.includes('/user.png')
-                      ? `http://localhost:8000/${AuthUser.profilePic}`
+                      ? `${backendURL}/${AuthUser.profilePic}`
                       : AuthUser.profilePic
                     : selectedUser.profilePic.includes('/user.png')
-                      ? `http://localhost:8000/${selectedUser.profilePic}`
+                      ? `${backendURL}/${selectedUser.profilePic}`
                       : selectedUser.profilePic
                 }
                 className="w-7 rounded-full"
