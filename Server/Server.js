@@ -35,7 +35,7 @@ app.use('/messages',MessRoute);
 
 ConnectDb(process.env.MONGO_URI);
 
-if (process.env.NODE_ENV !== 'prodcution') {
+if (process.env.NODE_ENV !== 'production') {
   server.listen(PORT, () => console.log(`Server started at port ${PORT}`));
 }
 //export server for vercel only
