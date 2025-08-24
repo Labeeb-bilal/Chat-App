@@ -27,9 +27,9 @@ if (AllUsers) {
       )
     : AllUsers;
 }
-    const profilePicUrl = AuthUser?.profilePic?.includes('/user.png')
-    ? `${backendURL}${AuthUser?.profilePic}`
-    : AuthUser?.profilePic || "/user.png"; 
+    // const profilePicUrl = AuthUser?.profilePic?.includes('/user.png')
+    // ? `${backendURL}${AuthUser?.profilePic}`
+    // : AuthUser?.profilePic || "/user.png"; 
 
 
   return (
