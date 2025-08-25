@@ -21,10 +21,10 @@ export const ChatProvider = ({children}) => {
 
   const handleGetAllUsersForSidebar = async () => {
       try {
-      if (axios.defaults.headers.common['token']) {
-        //
-      }
-
+        setloading(true);
+        if (axios.defaults.headers.common['token']) {
+          //
+        }
         const res = await axios.get('/messages/users');
         if (res.data.success) {
             setAllUsers(res.data.AllUsers);
@@ -33,6 +33,10 @@ export const ChatProvider = ({children}) => {
 
      } catch (error) {
         toast.error(error.message);
+        setloading(false);
+     }
+     finally{
+      setloading(false)
      }
   }
 

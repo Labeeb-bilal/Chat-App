@@ -7,7 +7,7 @@ import { ChatContext } from '../context/ChatContext'
 
 
 export default function SideBar() {
-  const {handleGetAllUsersForSidebar,AllUsers,selectedUser,setSelectedUser,unSeenMessages,setunSeenMessages} = useContext(ChatContext);
+  const {handleGetAllUsersForSidebar,AllUsers,selectedUser,setSelectedUser,unSeenMessages,setunSeenMessages,loading} = useContext(ChatContext);
   const {handleLogout,onlineUsers,AuthUser} = useContext(AuthContext);
   const [input, setinput] = useState(null);
   const navigate = useNavigate();
@@ -35,7 +35,9 @@ if (AllUsers) {
 
 
   return (
+
     <div className={`bg-[#8185B2]/10 h-full p-5 rounded-r-xl overflow-y-scroll text-white ${selectedUser? ' max-md:hidden':''}`}>
+
       <div className='flex justify-between items-center '>
         <img src={assets.logo} className='max-w-40 '/>
         <div className='relative group py-2'>
@@ -55,7 +57,7 @@ if (AllUsers) {
       </div>
 
       <div className='flex flex-col mt-5'>
-        {
+        { loading ? <p className='text-center'>Loading</p> :
           filteredUser && filteredUser.map((user,index) => (
             <div key={index} className={`relative flex items-center gap-2 p-2 pl-4 rounded cursor-pointer
              max-sm:text-sm ${selectedUser?._id === user._id && 'bg-[#282142]/50'}`} onClick={(()=> {
